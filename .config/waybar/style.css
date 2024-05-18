@@ -1,6 +1,6 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: FontAwesome, Jetbrains Mono;
+    font-family: Jetbrains Mono Nerd Font Propo;
     font-size: 12pt;
 }
 
@@ -83,7 +83,7 @@ button:hover {
 
 /* If workspaces is the leftmost module, omit left margin */
 .modules-left > widget:first-child > #workspaces {
-    margin-left: 10
+    margin-left: 10px;
 }
 
 /* If workspaces is the rightmost module, omit right margin */
