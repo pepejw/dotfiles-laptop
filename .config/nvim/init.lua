@@ -14,6 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 -- plugin setup
 require("lazy").setup({
+  "christoomey/vim-tmux-navigator", lazy = false,
   "catppuccin/nvim", name = "catppuccin", priority = 1000 , 
   "nvim-lua/plenary.nvim",
   "nvim-telescope/telescope.nvim", tag = '0.1.5',
