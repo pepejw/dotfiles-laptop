@@ -109,4 +109,4 @@ alias ls="ls -a --color=auto"
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh/config.toml)"
 
-eval `ssh-agent`
+{ eval `ssh-agent`; } &>/dev/null
