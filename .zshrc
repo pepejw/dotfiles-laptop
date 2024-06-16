@@ -107,6 +107,5 @@ source $ZSH/oh-my-zsh.sh
 alias off="shutdown now"
 alias ls="ls -a --color=auto"
 eval "$(zoxide init --cmd cd zsh)"
-eval "$(oh-my-posh init zsh)"
-fastfetch
+eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh/config.toml)"
 
