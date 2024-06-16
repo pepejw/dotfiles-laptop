@@ -14,7 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 -- plugin setup
 require("lazy").setup({
-  "ellisonleao/gruvbox.nvim", priority = 1000 , config = true, opts = {},
+  "catppuccin/nvim", name = "catppuccin", priority = 1000 , 
   "nvim-lua/plenary.nvim",
   "nvim-telescope/telescope.nvim", tag = '0.1.5',
     dependencies = { 'nvim-lua/plenary.nvim' },
@@ -55,11 +55,16 @@ require("lazy").setup({
   ft = {"go", 'gomod'},
   build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
 })
-require("gruvbox").setup()
-vim.o.background = "dark"
+require("catppuccin").setup({
+    flavour = "mocha",
+    background = {
+        light = "latte",
+        dark = "mocha",
+    },
+})
 vim.cmd("set termguicolors")
-vim.cmd("colorscheme gruvbox")
+vim.cmd.colorscheme "catppuccin"
+
 require("telescope").setup()
 require('leap').create_default_mappings()
 require("colorizer").setup()
-

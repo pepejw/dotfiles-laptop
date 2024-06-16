@@ -5,12 +5,11 @@
 }
 
 window#waybar {
-    background-color: rgba(39,46,51,0.83);
-    border-bottom: 0px solid rgba(100, 114, 125, 0.5);
-    color: #D3C6AA;
-    transition-property: background-color;
+    background: @theme_base_color;
+    color: #CDD6F4;
+    transition-property: background;
     transition-duration: .5s;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 window#waybar.hidden {
@@ -52,7 +51,7 @@ button:hover {
 #workspaces button {
     padding: 0 5px;
     background-color: transparent;
-    color: #D3C6AA;
+    color: #CDD6F4;
 }
 
 #workspaces button:hover {
