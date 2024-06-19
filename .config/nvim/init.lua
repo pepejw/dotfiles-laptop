@@ -14,13 +14,8 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 -- plugin setup
 require("lazy").setup({
-  "neanias/everforest-nvim",
-  version = false,
-  lazy = true,
-  priority = 1000,
-  config = function()
-    require("everforest").setup()
-    end,
+  "christoomey/vim-tmux-navigator", lazy = false,
+  "catppuccin/nvim", name = "catppuccin", priority = 1000 , 
   "nvim-lua/plenary.nvim",
   "nvim-telescope/telescope.nvim", tag = '0.1.5',
     dependencies = { 'nvim-lua/plenary.nvim' },
@@ -59,15 +54,18 @@ require("lazy").setup({
   end,
   event = {"CmdlineEnter"},
   ft = {"go", 'gomod'},
-  build = ':lua require("go.install").update_all_sync()', -- if you need to install/update all binaries
-
-
-
-
+  build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
+})
+require("catppuccin").setup({
+    flavour = "mocha",
+    background = {
+        light = "latte",
+        dark = "mocha",
+    },
 })
 vim.cmd("set termguicolors")
-vim.cmd("colorscheme everforest")
+vim.cmd.colorscheme "catppuccin"
+
 require("telescope").setup()
 require('leap').create_default_mappings()
 require("colorizer").setup()
-

@@ -1,13 +1,17 @@
 {
     "layer": "top", // Waybar at top layer
     "position": "top", // Waybar position (top|bottom|left|right)
-    // "height": , // Waybar height (to be removed for auto height)
+    "height": 27, // Waybar height (to be removed for auto height)
     //"width": 161, // Waybar width
-    "spacing": 4, // Gaps between modules (4px)
+    "spacing": 3, // Gaps between modules (4px)
     // Choose the order of the modules
+    "margin-top": 7,
+    "margin-left": 5,
+    "margin-right": 5,
+    "margin-bottom": 2,
     "modules-left": ["hyprland/workspaces"],
     "modules-center": ["hyprland/window"],
-    "modules-right": ["custom/media", "pulseaudio", "clock", "tray"],
+    "modules-right": ["custom/media", "pulseaudio", "clock"],
     // Modules configuration
     "hyprland/workspaces": {
     //     "disable-scroll": true,
@@ -15,19 +19,19 @@
     //     "warp-on-scroll": false,
         "format": "{icon}",
         "format-icons": {
-             "1": "",
-             "2": "",
-             "3": "",
+             "1": "",
+             "2": "󰈹",
+             "3": "",
              "4": "",
-             "5": "",
+             "5": "",
     //         "urgent": "",
     //         "focused": "",
     //         "default": ""
          }
     },
     "tray": {
-        // "icon-size": 21,
-        "spacing": 10
+        "icon-size": 15,
+        "spacing": 15
     },
     "clock": {
         "timezone": "Europe/London",
@@ -36,19 +40,11 @@
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon} {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
+        "format": "{volume}% {icon} | {format_source} |",
+        "format-muted": " {format_source}",
         "format-source": "{volume}% ",
         "format-source-muted": "",
         "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
