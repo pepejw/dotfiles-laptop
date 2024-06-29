@@ -11,7 +11,7 @@ alias ls="eza -a"
 alias CD="cd"
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(fzf --zsh)"
-eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh/config.toml)"
+eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh/config.json)"
 
 { eval `ssh-agent`; ssh-add ~/.ssh/id_ed25519; } &>/dev/null
 

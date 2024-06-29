@@ -3,7 +3,7 @@
   "gitsigns.nvim": { "branch": "main", "commit": "0595724fa9516a35696ff6b1e3cb95b6462b38b1" },
   "go.nvim": { "branch": "master", "commit": "975521b7ad0339bacddbe01d9c4af6f658e409ad" },
   "guihua.lua": { "branch": "master", "commit": "225db770e36aae6a1e9e3a65578095c8eb4038d3" },
-  "lazy.nvim": { "branch": "main", "commit": "60fe75c88db22025989600bb53dba247654d9ed5" },
+  "lazy.nvim": { "branch": "main", "commit": "ec95702ae617308df35f35ad93c469c86d47346f" },
   "leap.nvim": { "branch": "main", "commit": "eca8108dcd5f41fbde2a674dceb58b81ed887dc8" },
   "nvim-colorizer.lua": { "branch": "master", "commit": "a065833f35a3a7cc3ef137ac88b5381da2ba302e" },
   "nvim-lspconfig": { "branch": "master", "commit": "95b2fc427353e42318c974d10685d500441b821b" },
