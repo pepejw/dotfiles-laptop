@@ -1,20 +1,15 @@
-@import '../../.cache/wal/colors-waybar.css';
 * {
-    /* `otf-font-awesome` is required to be installed for icons */
-    font-family: Jetbrains Mono Nerd Font Propo;
-    font-size: 12pt;
+  /* `otf-font-awesome` is required to be installed for icons */
+  font-family: Jetbrains Mono Nerd Font Propo;
+  font-size: 12pt;
 }
 
 window#waybar {
-    background: @background;
-    color: @foreground;
-    transition-property: background;
-    transition-duration: .5s;
-    border-radius: 5px;
-}
-
-window#waybar.hidden {
-    opacity: 0.5;
+  background: rgba(45, 53, 59, 0.88);
+  color: #d3c6aa;
+  transition-property: background;
+  transition-duration: 0.5s;
+  border-radius: 7px;
 }
 
 /*
@@ -26,93 +21,56 @@ window#waybar.solo {
 }
 */
 
-
 button {
-    /* Use box-shadow instead of border so the text isn't offset */
-    box-shadow: inset 0 -3px transparent;
-    /* Avoid rounded borders under each button name */
-    border: none;
-    border-radius: 0px;
-    transition: all 0.3s ease-in-out;
+  /* Use box-shadow instead of border so the text isn't offset */
+  box-shadow: inset 0 -3px transparent;
+  /* Avoid rounded borders under each button name */
+  border: none;
+  border-radius: 0px;
+  transition: all 0.3s ease-in-out;
+  color: #d3c6aa;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 button:hover {
-    background: inherit;
-    box-shadow: inset 0 -3px @color1;
+  background: inherit;
 }
 
+#workspaces {
+  padding: 4px;
+  border-radius: 15px;
+}
 
 #workspaces button {
-    padding: 0 5px;
-    background-color: transparent;
-    color: @foreground;
+  padding: 0 5px;
+  margin-right: 5px;
+  border-radius: 7px;
+  background-color: rgba(35, 42, 46, 0.9);
 }
 
 #workspaces button:hover {
-    background: @background;
+  background: rgba(167, 192, 128, 0.5);
 }
 
 #workspaces button.active {
-    background-color: inherit;
-    box-shadow: inset 0 -3px @color4;
+  background-color: rgba(167, 192, 128, 0.9);
+  color: #2d353b;
 }
 
-#workspaces button.urgent {
-    background-color: #4c3743;
+#window {
+  padding: 0 4px;
+  margin: 5px;
+  background-color: rgba(61, 72, 77, 0.9);
+  border-radius: 7px;
+  color: #d3c6aa;
+  border: 1px solid rgba(52, 63, 68, 0.9);
 }
 
-#mode {
-    background-color: #64727D;
-    border-bottom: 3px solid #ffffff;
-}
-
-#clock,
 #pulseaudio,
-#wireplumber,
-#tray,
-#workspaces {
-    margin: 0 4px;
-}
-
-/* If workspaces is the leftmost module, omit left margin */
-.modules-left > widget:first-child > #workspaces {
-    margin-left: 10px;
-}
-
-/* If workspaces is the rightmost module, omit right margin */
-.modules-right > widget:last-child > #clock {
-    margin-right: 10px;
-}
-
 #clock {
+  margin: 4px;
+  padding: 0 4px;
+  border: 1px solid rgba(52, 63, 68, 0.9);
+  background-color: rgba(35, 42, 46, 0.9);
+  border-radius: 7px;
 }
-
-label:focus {
-}
-#pulseaudio {
-}
-
-#pulseaudio.muted {
-}
-
-#wireplumber {
-}
-
-#wireplumber.muted {
-
-}
-#tray {
-}
-
-#tray > .passive {
-    -gtk-icon-effect: dim;
-}
-
-#tray > .needs-attention {
-    -gtk-icon-effect: highlight;
-    background-color: #4c3743;
-}
-
-
-

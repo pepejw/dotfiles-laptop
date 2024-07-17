@@ -1,0 +1,158 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = true
+
+format = """
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_status\
+$docker_context\
+$deno\
+$dotnet\
+$gleam\
+$golang\
+$kotlin\
+$lua\
+$nim\
+$nodejs\
+$python\
+$ruby\
+$rust\
+$fill\
+$cmd_duration\
+$time\
+$line_break\
+$character"""
+
+
+palette = 'everforest'
+
+[palettes.everforest]
+bg_dim = '#232A2E'
+bg0 = '#2D353B'
+bg1 = '#343F44'
+bg2 = '#3D484D'
+bg3 = '#475258'
+bg4 = '#4F585E'
+bg5 = '#56635F'
+
+bg_red = '#543A48'
+bg_visual = '#514045'
+bg_yellow = '#4D4C43'
+bg_green = '#425047'
+bg_blue = '#3A515D'
+
+red = '#E67E80'
+orange = '#E69875'
+yellow = '#DBBC7F'
+green = '#A7C080'
+blue = '#7FBBB3'
+aqua = '#83C092'
+purple = '#D699B6'
+
+fg = '#D3C6AA'
+
+statusline1 = '#A7C080'
+statusline2 = '#D3C6AA'
+statusline3 = '#E67E80'
+
+gray0 = '#7A8478'
+gray1 = '#859289'
+gray2 = '#9DA9A0'
+
+
+## CONFIGURATION
+[username]
+style_root = 'red bold'
+style_user = 'orange bold'
+format = '[$user]($style) '
+show_always = false
+
+[hostname]
+ssh_only = true
+disabled = false
+format = 'on [$ssh_symbol$hostname]($style) [|](bg1)'
+
+[directory]
+format = ' [$path]($style)[$read_only]($read_only_style) '
+read_only = ' '
+truncation_length = 0
+style = 'cyan bold'
+read_only_style = 'red'
+repo_root_style = 'underline bold blue'
+
+[git_branch]
+format = '[|](bg1) [$branch]($style) '
+style = 'blue bold'
+
+[docker_context]
+symbol = ' '
+format = '[|](bg1) [$symbol$context]($style)'
+
+[deno]
+symbol = ' '
+format = '[|](bg1) [$symbol]($style)'
+
+[dotnet]
+symbol = '󰪮 '
+format = '[|](bg1) [$symbol]($style)'
+
+[gleam]
+symbol = ' '
+format = '[|](bg1) [$symbol]($style)'
+
+[golang]
+symbol = '󰟓 '
+format = '[|](bg1) [$symbol]($style)'
+
+[kotlin]
+symbol = '󱈙 '
+format = '[|](bg1) [$symbol]($style)'
+
+[lua]
+symbol = '󰢱 '
+format = '[|](bg1) [$symbol]($style)'
+
+[nim]
+symbol = ' '
+format = '[|](bg1) [$symbol]($style)'
+
+[nodejs]
+symbol = ' '
+format = '[|](bg1) [$symbol]($style)'
+
+[python]
+symbol = ' '
+format = '[|](bg1) [$symbol]($style)'
+
+[ruby]
+symbol = ' '
+format = '[|](bg1) [$symbol]($style)'
+
+[rust]
+symbol = ' '
+format = '[|](bg1) [$symbol]($style)'
+
+[fill]
+symbol = '·'
+style = 'bold bg1'
+disabled = false
+
+[line_break]
+
+[character]
+format = ' $symbol '
+success_symbol = "[](bold statusline1)"
+error_symbol = "[](bold statusline3)"
+
+[cmd_duration]
+format = ' took [$duration]($style) [|](bg1) '
+
+[time]
+format = ' [$time]($style) '
+disabled = false

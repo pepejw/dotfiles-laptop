@@ -14,14 +14,24 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 -- plugin setup
 require("lazy").setup({
-  "christoomey/vim-tmux-navigator", lazy = false,
-  "uZer/pywal16.nvim", name = "pywal16", priority = 1000 , 
+  "neanias/everforest-nvim",
+  version = false,
+  lazy = false,
+  priority = 1000,
+
   "nvim-lua/plenary.nvim",
-  "nvim-telescope/telescope.nvim", tag = '0.1.5',
-    dependencies = { 'nvim-lua/plenary.nvim' },
-  "nvim-treesitter/nvim-treesitter", build = ":TSUpdate",
+
+  "nvim-telescope/telescope.nvim",
+  tag = '0.1.5',
+  dependencies = { 'nvim-lua/plenary.nvim' },
+
+  "nvim-treesitter/nvim-treesitter",
+  build = ":TSUpdate",
+
   "ggandor/leap.nvim",
+
   "norcalli/nvim-colorizer.lua",
+
   "folke/which-key.nvim",
   event = "VeryLazy",
   init = function()
@@ -29,10 +39,17 @@ require("lazy").setup({
     vim.o.timeoutlen = 300
   end,
   opts = {},
+
   "lewis6991/gitsigns.nvim",
-  'akinsho/toggleterm.nvim', version = "*", config = true,
+
+  'akinsho/toggleterm.nvim',
+  version = "*",
+  config = true,
+
   "jinh0/eyeliner.nvim",
+
   "kkharji/sqlite.lua",
+
   "danielfalk/smart-open.nvim",
   branch = "0.2.x",
   config = function()
@@ -41,10 +58,13 @@ require("lazy").setup({
   dependencies = {
     "kkharji/sqlite.lua",
   },
+
   "ray-x/guihua.lua",
+
   "neovim/nvim-lspconfig",
+
   "ray-x/go.nvim",
-  dependencies = {  -- optional packages
+  dependencies = { -- optional packages
     "ray-x/guihua.lua",
     "neovim/nvim-lspconfig",
     "nvim-treesitter/nvim-treesitter",
@@ -52,15 +72,23 @@ require("lazy").setup({
   config = function()
     require("go").setup()
   end,
-  event = {"CmdlineEnter"},
-  ft = {"go", 'gomod'},
-  build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
+  event = { "CmdlineEnter" },
+  ft = { "go", 'gomod' },
+  build = ':lua require("go.install").update_all_sync()', -- if you need to install/update all binaries
+
+  "nvim-lualine/lualine.nvim",
+  dependencies = { "nvim-tree/nvim-web-devicons" }
 })
-local pywal16 = require('pywal16')
-pywal16.setup()
 
 
-vim.cmd.colorscheme 'pywal16'
+vim.filetype.add({
+  pattern = { [".*/hypr/.*%.conf"] = "hyprlang" },
+})
+vim.opt.termguicolors = true
 require("telescope").setup()
 require('leap').create_default_mappings()
 require("colorizer").setup()
+require("everforest").load()
+require("lualine").setup {
+  options = { theme = "everforest" }
+}
